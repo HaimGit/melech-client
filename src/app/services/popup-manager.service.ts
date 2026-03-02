@@ -11,7 +11,7 @@ export class PopupManagerService {
   ) { }
 
   open<T extends { onClose?: EventEmitter<any> }>(component: Type<T>, inputs?: Partial<T>): ComponentRef<T> {
-    const overlay = this.overlay.create({ direction: 'rtl' });
+    const overlay = this.overlay.create();
     const componentPortal = new ComponentPortal(component);
     const componentRef = overlay.attach(componentPortal);
 
@@ -27,7 +27,7 @@ export class PopupManagerService {
     const heightAsNumber = Number(height.replace('px', ''));
 
     componentRef.location.nativeElement.style.position = 'relative';
-    componentRef.location.nativeElement.style.right = (screen.availWidth - widthAsNumber) / 2 + 'px';
+    componentRef.location.nativeElement.style.left = (screen.availWidth - widthAsNumber) / 2 + 'px';
     componentRef.location.nativeElement.style.top = (screen.availHeight - heightAsNumber) / 4 + 'px';
 
     if (componentRef.instance.onClose) {
