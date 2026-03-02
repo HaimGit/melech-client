@@ -10,7 +10,7 @@ export class PopupManagerService {
     private applicationRef: ApplicationRef
   ) { }
 
-  open<T extends { onClose?: EventEmitter<void> }>(component: Type<T>, inputs?: Partial<T>): ComponentRef<T> {
+  open<T extends { onClose?: EventEmitter<any> }>(component: Type<T>, inputs?: Partial<T>): ComponentRef<T> {
     const overlay = this.overlay.create({ direction: 'rtl' });
     const componentPortal = new ComponentPortal(component);
     const componentRef = overlay.attach(componentPortal);

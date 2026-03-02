@@ -1,4 +1,4 @@
-import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, Input, ViewChild } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, EventEmitter, Input, Output, ViewChild } from '@angular/core';
 import { DisplayedListItem } from 'src/app/models/displayed-list-item';
 
 @Component({
@@ -8,8 +8,11 @@ import { DisplayedListItem } from 'src/app/models/displayed-list-item';
 })
 export class DropDownComponent {
   @ViewChild("container") containerRef!: ElementRef;
+
   @Input() values!: DisplayedListItem[];
   @Input() width!: string;
+
+  @Output() onValueChange = new EventEmitter<DisplayedListItem>();
 
   selectedItem: DisplayedListItem = { valueId: '-1', valueToDisplay: '' };
   isOpen: boolean = false;
@@ -22,5 +25,7 @@ export class DropDownComponent {
   selectItem(item: DisplayedListItem): void {
     this.selectedItem = item;
     this.isOpen = false;
+
+    this.onValueChange.emit(item);
   }
 }

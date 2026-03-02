@@ -7,12 +7,14 @@ import { MaterialModule } from '../material/material.module';
 import { PipesModule } from './pipes/pipes.module';
 import { FormsModule } from '@angular/forms';
 import { CdkOverlayOrigin, CdkConnectedOverlay } from "@angular/cdk/overlay";
+import { StepperComponent } from './stepper/stepper.component';
 
 @NgModule({
   declarations: [
     DropDownComponent,
     DropdownSearchComponent,
-    PopupHeaderComponent
+    PopupHeaderComponent,
+    StepperComponent
   ],
   imports: [
     CommonModule,

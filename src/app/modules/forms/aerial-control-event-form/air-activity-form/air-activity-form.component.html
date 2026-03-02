@@ -1,0 +1,21 @@
+<div class="air-activity-form">
+    <kng-popup-header [rightTitle]="FORM_TITLE" [close]="closeFunc"></kng-popup-header>
+    <div class="form-body">
+        <div class="form-row">
+            <div class="field-container">
+                <div class="field-title">תיאור</div>
+                <kng-drop-down [width]="'150px'" [values]="AIR_ACTIVITIES_DESCRIPTION"></kng-drop-down>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="field-container">
+                <div class="field-label">טייסת</div>
+                <kng-drop-down [width]="'150px'" [values]="SQUADRONS"></kng-drop-down>
+            </div>
+            <div class="field-container">
+                <div class="field-label">סוג מטוס</div>
+                <kng-drop-down [width]="'150px'" [values]="PLANE_TYPES"></kng-drop-down>
+            </div>
+        </div>
+    </div>
+</div>

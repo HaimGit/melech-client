@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { DisplayedListItem } from 'src/app/models/displayed-list-item';
 
 @Component({
@@ -10,6 +10,8 @@ export class DropdownSearchComponent {
   @Input() values!: DisplayedListItem[];
   @Input() width!: string;
   @Input() placeholder?: string;
+
+  @Output() onValueChange = new EventEmitter<DisplayedListItem>();
 
   searchText: string = '';
   selectedItem: DisplayedListItem = { valueId: '-1', valueToDisplay: '' };
@@ -23,5 +25,7 @@ export class DropdownSearchComponent {
     this.selectedItem = value;
     this.isOpen = false;
     this.searchText = value.valueToDisplay;
+
+    this.onValueChange.emit(value);
   }
 }

@@ -1,5 +1,8 @@
 import { AfterViewChecked, AfterViewInit, ChangeDetectorRef, Component, ElementRef, EventEmitter, OnInit, Output, QueryList, ViewChild, ViewChildren } from '@angular/core';
+import { EVENT_TYPES_MOCK } from 'src/app/mocks/event-types.mock';
 import { DisplayedListItem } from 'src/app/models/displayed-list-item';
+import { PopupManagerService } from 'src/app/services/popup-manager.service';
+import { AirActivityFormComponent } from './air-activity-form/air-activity-form.component';
 
 @Component({
   selector: 'kng-aerial-control-event-form',
@@ -7,45 +10,31 @@ import { DisplayedListItem } from 'src/app/models/displayed-list-item';
   styleUrls: ['./aerial-control-event-form.component.less']
 })
 export class AerialControlEventFormComponent implements AfterViewInit {
-  @ViewChildren("formRow") formRows!: QueryList<ElementRef>;
-
+  @ViewChild('dropdownFieldContainer') dropdownFieldContainerRef!: ElementRef;
   @Output() onClose = new EventEmitter<void>;
 
-  closeToPass = this.closePopup.bind(this);
-  formTitle = "אירוע אווירי חדש";
+  readonly EVENT_TYPES = EVENT_TYPES_MOCK;
+  readonly FORM_TITLE = 'אירוע אווירי חדש';
+  readonly FIELD_CONTAINER_PERCENTAGE_WIDTH = '45%';
 
-  dropdownWidthByRow: string[] = [];
+  closeFunc = this.closePopup.bind(this);
+  dropdownWidth!: string;
 
-  eventTypeMockValues: DisplayedListItem[] = [
-    { valueId: '1', valueToDisplay: 'first' },
-    { valueId: '2', valueToDisplay: 'second' },
-    { valueId: '3', valueToDisplay: 'third' },
-    { valueId: '4', valueToDisplay: 'fourth' },
-  ]
-
-  constructor(private changeDetectorRef: ChangeDetectorRef) { }
-
-  private calculateFieldContainerAndDropdownWidthByRow(): void {
-    this.formRows.forEach(formRow => {
-      const fieldsContainers: any[] = formRow.nativeElement.querySelectorAll('.field-container');
-      const fieldContainerPercentageWidth = 90 / fieldsContainers.length || 1;
-
-      fieldsContainers.forEach(fieldContainer => fieldContainer.style.width = `${fieldContainerPercentageWidth}%`);
-
-      const fieldContainer = formRow.nativeElement.querySelector('.field-container');
-
-      if (fieldContainer) {
-        this.dropdownWidthByRow.push(getComputedStyle(fieldContainer).width);
-      }
-    })
-  }
+  constructor(
+    private changeDetectorRef: ChangeDetectorRef,
+    private popupManagerService: PopupManagerService
+  ) { }
 
   ngAfterViewInit(): void {
-    this.calculateFieldContainerAndDropdownWidthByRow();
+    this.dropdownWidth = getComputedStyle(this.dropdownFieldContainerRef.nativeElement).width;
     this.changeDetectorRef.detectChanges();
   }
 
   closePopup(): void {
     this.onClose.emit();
+  }
+
+  openNewAirActivityForm() {
+    this.popupManagerService.open(AirActivityFormComponent)
   }
 }
