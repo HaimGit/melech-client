@@ -1,4 +1,38 @@
 <div class="aerial-control-event-form">
-    <kng-popup-header rightTitle="ge"></kng-popup-header>
-    <p>aerial-control-event-form works!</p>
+    <kng-popup-header [rightTitle]="formTitle" [close]="closeToPass"></kng-popup-header>
+
+    <div class="form-body">
+        <div #formRow class="form-row">
+            <div class="field-container">
+                <div class="field-label">שם האירוע</div>
+                <input class="field text-field" type="text">
+            </div>
+            <div class="field-container">
+                <div class="field-label">סוג אירוע</div>
+                <kng-dropdown-search [width]="dropdownWidthByRow[0] || ''" [values]="eventTypeMockValues"
+                    placeholder="סוג אירוע"></kng-dropdown-search>
+            </div>
+            <div class="field-container">
+                <div class="field-label">בדיקה</div>
+                <kng-drop-down [width]="dropdownWidthByRow[0] || ''" [values]="eventTypeMockValues"
+                    placeholder="בדיקה"></kng-drop-down>
+            </div>
+            <div class="field-container">
+                <div class="field-label">עוד בדיקה</div>
+                <kng-dropdown-search [width]="dropdownWidthByRow[0] || ''" [values]="eventTypeMockValues"
+                    placeholder="עוד בדיקה"></kng-dropdown-search>
+            </div>
+            <div class="field-container">
+                <div class="field-label">עוד בדיקה 2</div>
+                <kng-dropdown-search [width]="dropdownWidthByRow[0] || ''" [values]="eventTypeMockValues"
+                    placeholder="עוד בדיקה 2"></kng-dropdown-search>
+            </div>
+        </div>
+        <div #formRow class="form-row">Operational info row...</div>
+        <div #formRow class="form-row">Dates info row...</div>
+        <div #formRow class="form-row">Envelope events row...</div>
+        <!-- <div class="form-row">
+            bu
+        </div> -->
+    </div>
 </div>

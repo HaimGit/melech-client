@@ -1,1 +1,21 @@
-<p>drop-down works!</p>
+<div #container class="drop-down-container">
+    <div class="input-wrapper">
+        <input class="text-field" [style.width]="width" type="text" readonly cdkOverlayOrigin
+            #trigger="cdkOverlayOrigin" [(ngModel)]="selectedItem.valueToDisplay" [placeholder]="placeholder">
+
+        <mat-icon class="open-dropdown-button" (click)="toggleDropdown()">{{
+            isOpen
+            ? 'expand_less'
+            : 'expand_more'
+            }}</mat-icon>
+    </div>
+</div>
+
+<ng-template cdkConnectedOverlay [cdkConnectedOverlayOrigin]="trigger" [cdkConnectedOverlayOpen]="isOpen"
+    [cdkConnectedOverlayOffsetX]="4" (detach)="isOpen = false">
+    <div [style.width]="width" class="drop-down-items">
+        <div class="drop-down-item" *ngFor="let item of values" (click)="selectItem(item)">
+            <span class="drop-down-item-content">{{ item.valueToDisplay }}</span>
+        </div>
+    </div>
+</ng-template>

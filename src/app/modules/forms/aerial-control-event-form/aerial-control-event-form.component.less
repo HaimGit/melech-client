@@ -1,0 +1,35 @@
+.aerial-control-event-form {
+    width: 600px;
+    height: 450px;
+    border-radius: 0 0 10px 10px;
+    background-color: #ebe9e9;
+    overflow-y: auto;
+
+    .form-body {
+        .form-row {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+
+            .field-container {
+                padding: 0.5em;
+
+                .field-label {
+                    font-size: 14px;
+                }
+
+                .text-field,
+                .text-field:focus {
+                    width: 100%;
+                    border: 1px solid #efefef;
+                    border-radius: 5px;
+                    outline: none;
+                }
+            }
+        }
+
+        .form-row:not(:first-child) {
+            padding-top: 2em;
+        }
+    }
+}

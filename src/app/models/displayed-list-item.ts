@@ -1,4 +1,4 @@
 export interface DisplayedListItem {
     valueId: string;
-    valueToDisplay: any;
+    valueToDisplay: string;
 }

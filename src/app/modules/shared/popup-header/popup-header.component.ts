@@ -6,7 +6,7 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./popup-header.component.less']
 })
 export class PopupHeaderComponent {
-  @Input() close: () => any;
+  @Input() close!: () => any;
   @Input() rightTitle!: string;
   
   closeForm(): void {

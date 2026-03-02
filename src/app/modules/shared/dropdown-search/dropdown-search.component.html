@@ -1,1 +1,17 @@
-<p>dropdown-search works!</p>
+<div class="dropdown-search-container">
+    <input class="text-field" [style.width]="width" type="text" cdkOverlayOrigin #trigger="cdkOverlayOrigin"
+        [selectionDirection]="'rtl'" [(ngModel)]="searchText" [placeholder]="placeholder" (click)="toggleDropdown()">
+</div>
+
+<ng-template cdkConnectedOverlay [cdkConnectedOverlayOrigin]="trigger" [cdkConnectedOverlayOpen]="isOpen"
+    [cdkConnectedOverlayOffsetX]="2" (detach)="isOpen = false">
+    <div class="dropdown-search-items">
+        <div [style.width]="width" class="dropdown-search-item" *ngFor="let value of values | searchFilter: searchText"
+            (click)="selectItem(value)">
+            <span class="dropdown-search-item-content">{{ value.valueToDisplay }}</span>
+        </div>
+        <div [style.width]="width" class="dropdown-search-item" *ngIf="!(values | searchFilter: searchText).length">
+            <span class="dropdown-search-item-content">No results found</span>
+        </div>
+    </div>
+</ng-template>

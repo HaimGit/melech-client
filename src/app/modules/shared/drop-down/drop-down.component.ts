@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, Input, ViewChild } from '@angular/core';
 import { DisplayedListItem } from 'src/app/models/displayed-list-item';
 
 @Component({
@@ -7,8 +7,20 @@ import { DisplayedListItem } from 'src/app/models/displayed-list-item';
   styleUrls: ['./drop-down.component.less']
 })
 export class DropDownComponent {
+  @ViewChild("container") containerRef!: ElementRef;
   @Input() values!: DisplayedListItem[];
-  @Input() value?: DisplayedListItem;
+  @Input() width!: string;
 
-  constructor() {}
+  selectedItem: DisplayedListItem = { valueId: '-1', valueToDisplay: '' };
+  isOpen: boolean = false;
+  placeholder: string = "בחירה";
+
+  toggleDropdown(): void {
+    this.isOpen = !this.isOpen;
+  }
+
+  selectItem(item: DisplayedListItem): void {
+    this.selectedItem = item;
+    this.isOpen = false;
+  }
 }

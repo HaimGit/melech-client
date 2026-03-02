@@ -9,6 +9,8 @@ import { OpenTooltipOnEnum } from 'src/app/enums/open-tooltip-on.enum';
   styleUrls: ['./header-toolbar.component.less']
 })
 export class HeaderToolbarComponent {
+  readonly AerialControlEventFormRef = AerialControlEventFormComponent;
+  readonly OpenTooltipOnEnum = OpenTooltipOnEnum;
 
   appTitle = 'מל"ך באזרחי';
 
@@ -17,6 +19,6 @@ export class HeaderToolbarComponent {
   ) {}
 
   newEventButtonClicked() {
-    this.popupManagerService.open(AerialControlEventFormComponent, {})
+    this.popupManagerService.open(AerialControlEventFormComponent);
   }
 }

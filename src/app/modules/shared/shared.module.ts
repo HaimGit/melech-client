@@ -4,21 +4,29 @@ import { DropDownComponent } from './drop-down/drop-down.component';
 import { DropdownSearchComponent } from './dropdown-search/dropdown-search.component';
 import { PopupHeaderComponent } from './popup-header/popup-header.component';
 import { MaterialModule } from '../material/material.module';
+import { PipesModule } from './pipes/pipes.module';
+import { FormsModule } from '@angular/forms';
+import { CdkOverlayOrigin, CdkConnectedOverlay } from "@angular/cdk/overlay";
 
 @NgModule({
   declarations: [
     DropDownComponent,
     DropdownSearchComponent,
-    PopupHeaderComponent,
+    PopupHeaderComponent
   ],
   imports: [
     CommonModule,
+    FormsModule,
     MaterialModule,
-  ],
+    PipesModule,
+    CdkOverlayOrigin,
+    CdkConnectedOverlay
+],
   exports: [
     DropDownComponent,
     DropdownSearchComponent,
-    PopupHeaderComponent
+    PopupHeaderComponent,
+    PipesModule
   ]
 })
 export class SharedModule { }
