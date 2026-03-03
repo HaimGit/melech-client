@@ -1,6 +1,4 @@
 .aerial-control-event-form {
-    width: 600px;
-    height: 450px;
     border-radius: 0 0 10px 10px;
     background-color: #ebe9e9;
     overflow-y: auto;
@@ -8,8 +6,11 @@
     .form-body {
         .form-row {
             display: flex;
-            justify-content: space-evenly;
             align-items: center;
+
+            &:not(:first-child) {
+                padding-top: 1.5em;
+            }
 
             .field-container {
                 padding: 0.5em;
@@ -36,10 +37,6 @@
                 border-radius: 20px;
                 cursor: pointer;
             }
-        }
-
-        .form-row:not(:first-child) {
-            padding-top: 2em;
         }
     }
 }

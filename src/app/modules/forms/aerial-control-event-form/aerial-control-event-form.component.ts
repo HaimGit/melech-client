@@ -15,7 +15,7 @@ export class AerialControlEventFormComponent implements AfterViewInit {
 
   readonly EVENT_TYPES = EVENT_TYPES_MOCK;
   readonly FORM_TITLE = 'אירוע אווירי חדש';
-  readonly FIELD_CONTAINER_PERCENTAGE_WIDTH = '45%';
+  readonly FIELD_CONTAINER_PERCENTAGE_WIDTH = '30%';
 
   closeFunc = this.closePopup.bind(this);
   dropdownWidth!: string;
