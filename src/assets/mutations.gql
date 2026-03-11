@@ -1,0 +1,296 @@
+mutation syncIafBases {
+    syncUnits(units: [
+        {
+            name: "רמת דוד כנף 1"
+        },
+        {
+            name: "חצור כנף 4"
+        },
+        {
+            name: "תל נוף בח\"א 8"
+        },
+        {
+            name: "פלמחים בח\"א 30"
+        },
+        {
+            name: "חצרים בח\"א 6
+        },
+        {
+            name: "נבטים בח\"א 28"
+        },
+        {
+            name: "רמון כנף 25"
+        },
+        {
+            name: "עובדה בח\"א 10"
+        }
+    ], idsToDelete: []) {
+        createdIds
+        updatedIds
+        deletedIds
+        failures {
+            reason
+        }
+    }
+}
+
+mutation syncSquadrons {
+    syncSquadrons(squadrons: [
+        {
+            name: "101",
+            parentUnitId: "1"
+        },
+        {
+            name: "105",
+            parentUnitId: "1"
+        },
+        {
+            name: "109",
+            parentUnitId: "1"
+        },
+        {
+            name: "157",
+            parentUnitId: "1"
+        },
+        {
+            name: "160",
+            parentUnitId: "1"
+        },
+        {
+            name: "100",
+            parentUnitId: "4"
+        },
+        {
+            name: "200",
+            parentUnitId: "4"
+        },
+        {
+            name: "144",
+            parentUnitId: "4"
+        },
+        {
+            name: "106",
+            parentUnitId: "8"
+        },
+        {
+            name: "133",
+            parentUnitId: "8"
+        },
+        {
+            name: "118",
+            parentUnitId: "8"
+        },
+        {
+            name: "210",
+            parentUnitId: "8"
+        },
+        {
+            name: "5601",
+            parentUnitId: "8"
+        },
+        {
+            name: "123",
+            parentUnitId: "30"
+        },
+        {
+            name: "124",
+            parentUnitId: "30"
+        },
+        {
+            name: "147",
+            parentUnitId: "30"
+        },
+        {
+            name: "161",
+            parentUnitId: "30"
+        },
+        {
+            name: "166",
+            parentUnitId: "30"
+        },
+        {
+            name: "69",
+            parentUnitId: "6"
+        },
+        {
+            name: "107",
+            parentUnitId: "6"
+        },
+        {
+            name: "102",
+            parentUnitId: "6"
+        },
+        {
+            name: "140",
+            parentUnitId: "28"
+        },
+        {
+            name: "116",
+            parentUnitId: "28"
+        },
+        {
+            name: "117",
+            parentUnitId: "28"
+        },
+        {
+            name: "103",
+            parentUnitId: "28"
+        },
+        {
+            name: "131",
+            parentUnitId: "28"
+        },
+        {
+            name: "120",
+            parentUnitId: "28"
+        },
+        {
+            name: "122",
+            parentUnitId: "28"
+        },
+        {
+            name: "119",
+            parentUnitId: "25"
+        },
+        {
+            name: "201",
+            parentUnitId: "25"
+        },
+        {
+            name: "253",
+            parentUnitId: "25"
+        },
+        {
+            name: "113",
+            parentUnitId: "25"
+        },
+        {
+            name: "190",
+            parentUnitId: "25"
+        },
+        {
+            name: "115",
+            parentUnitId: "10"
+        },
+    ], idsToDelete: []) {
+        createdIds
+        updatedIds
+        deletedIds
+        failures {
+            reason
+        }
+    }
+}
+
+mutation syncSimpleEntities {
+    syncSimpleEntityTypes(simpleEntityTypes: [
+        {
+            name: "platformTypes",
+            values: [
+                {
+                    name: "ברק F16"
+                    unitIds: ["101", "105", "109", "115", "5601"]
+                },
+                {
+                    name: "כטמ\"מ"
+                    unitIds: ["157", "160", "5601"]
+                },
+                {
+                    name: "צופית",
+                    unitIds: ["100", "5601"]
+                },
+                {
+                    name: "חופית",
+                    unitIds: ["100", "5601"]
+                },
+                {
+                    name: "שובל",
+                    unitIds: ["200", "5601"]
+                },
+                {
+                    name: "ניצוץ",
+                    unitIds: ["144", "5601"]
+                },
+                {
+                    name: "בז F15",
+                    unitIds: ["106", "133", "5601"]
+                },
+                {
+                    name: "יסעור",
+                    unitIds: ["118", "5601"]
+                },
+                {
+                    name: "איתן",
+                    unitIds: ["210", "5601"] 
+                },
+                {
+                    name: "ינשוף",
+                    unitIds: ["123", "124", "5601"]
+                },
+                {
+                    name: "כוכב",
+                    unitIds: ["147", "166", "5601"]
+                },
+                {
+                    name: "זיק",
+                    unitIds: ["161", "5601"]
+                },
+                {
+                    name: "רעם F15I",
+                    unitIds: ["69", "5601"]
+                },
+                {
+                    name: "סופה F16I",
+                    unitIds: ["107", "119", "201", "253", "5601"]
+                },
+                {
+                    name: "סנונית",
+                    unitIds: ["102", "5601"]
+                },
+                {
+                    name: "עפרוני",
+                    unitIds: ["102", "5601"]
+                },
+                {
+                    name: "עופר",
+                    unitIds: ["102", "5601"]
+                },
+                {
+                    name: "אדיר F35I",
+                    unitIds: ["140", "116", "117", "5601"]
+                },
+                {
+                    name: "שמשון",
+                    unitIds: ["103", "5601"]
+                },
+                {
+                    name: "קרנף",
+                    unitIds: ["131", "5601"]
+                },
+                {
+                    name: "ראם",
+                    unitIds: ["120", "5601"]
+                },
+                {
+                    name: "נחשון",
+                    unitIds: ["122", "5601"]
+                },
+                {
+                    name: "שרף",
+                    unitIds: ["113", "5601"]
+                },
+                {
+                    name: "פתן",
+                    unitIds: ["190", "5601"]
+                }
+            ]
+        }
+    ], idsToDelete: []) {
+        createdIds
+        updatedIds
+        deletedIds
+        failures {
+            reason
+        }
+    }
+}
