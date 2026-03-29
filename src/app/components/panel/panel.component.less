@@ -1,0 +1,103 @@
+.body {
+  display: flex;
+  justify-content: center;
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(107, 99, 99);
+}
+
+.panel-container {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+
+  .panel {
+    display: flex;
+    justify-content: end;
+    width: 30%;
+    box-shadow: 0 1px 3px gainsboro;
+    padding: 0.5em 1em;
+
+    .panel-info {
+      display: grid;
+      text-align: end;
+
+      .panel-title {
+        margin-bottom: 0.7em;
+      }
+
+      .panel-count {
+        margin-bottom: 0.7em;
+        color: black;
+        font-weight: bold;
+      }
+
+      .panel-badges {
+        display: flex;
+        gap: 0.5em;
+
+        .badge {
+          display: flex;
+          transform: translateY(-5px);
+          align-items: center;
+          color: white;
+          padding: 0.3em 0.5em;
+          border-radius: 3px;
+        }
+
+        .special-event {
+          display: flex;
+          justify-self: center;
+          align-items: center;
+          background-color: rgb(56, 207, 149);
+
+          .event-count {
+            font-size: 0.75em;
+            background-color: white;
+            padding: 0.2em;
+            color: black;
+            margin-right: 0.3em;
+            border-radius: 3px;
+          }
+        }
+      }
+    }
+
+    .icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 7px;
+      margin-left: 2em;
+      height: 1.5em;
+      width: 1.5em;
+      padding: 0.3em;
+
+      .icon-svg {
+        display: inline-block;
+        height: 1.2em;
+        width: 1.2em;
+        color: white;
+      }
+    }
+  }
+}
+
+.icon-red {
+  background-color: rgb(250, 109, 109);
+}
+
+.icon-blue {
+  background-color: rgb(81, 160, 230);
+}
+
+.icon-green {
+  background-color: rgb(56, 207, 149);
+}
+
+.badge-purple {
+  background-color: rgb(143, 77, 250);
+}
+
+.badge-pink {
+  background-color: rgb(250, 77, 235);
+}
