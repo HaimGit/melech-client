@@ -1,24 +1,20 @@
-.body {
-  display: flex;
-  justify-content: center;
+@import url(../../variables.less);
+
+:host {
   font-family: Arial, Helvetica, sans-serif;
   color: rgb(107, 99, 99);
-}
 
-.panel-container {
-  display: flex;
-  justify-content: space-around;
-  width: 100%;
-
-  .panel {
+  .panels-container {
     display: flex;
-    justify-content: end;
-    width: 30%;
-    box-shadow: 0 1px 3px gainsboro;
-    padding: 0.5em 1em;
+    justify-content: space-around;
+    width: 100%;
 
-    .panel-info {
-      display: grid;
+    .panel {
+      display: flex;
+      justify-content: end;
+      width: 30%;
+      box-shadow: 0 1px 3px gainsboro;
+      padding: 0.5em 1em;
       text-align: end;
 
       .panel-title {
@@ -59,44 +55,45 @@
           }
         }
       }
-    }
+      
 
-    .icon {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 7px;
-      margin-left: 2em;
-      height: 1.5em;
-      width: 1.5em;
-      padding: 0.3em;
+      .icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 7px;
+        margin-left: 2em;
+        height: 1.5em;
+        width: 1.5em;
+        padding: 0.3em;
 
-      .icon-svg {
-        display: inline-block;
-        height: 1.2em;
-        width: 1.2em;
-        color: white;
+        .icon-svg {
+          display: inline-block;
+          height: 1em;
+          width: 1em;
+          color: white;
+        }
       }
     }
   }
-}
 
-.icon-red {
-  background-color: rgb(255, 86, 90);
-}
+  .icon-red {
+    background-color: @panel-red;
+  }
 
-.icon-blue {
-  background-color: rgb(101, 171, 247);
-}
+  .icon-blue {
+    background-color: @panel-blue;
+  }
 
-.icon-green {
-  background-color: rgb(0, 187, 147);
-}
+  .icon-green {
+    background-color: @panel-green;
+  }
 
-.badge-purple {
-  background-color: rgb(139, 99, 250);
-}
+  .badge-purple {
+    background-color: @panel-purple;
+  }
 
-.badge-pink {
-  background-color: rgb(255, 97, 212);
+  .badge-pink {
+    background-color: @panel-pink;
+  }
 }

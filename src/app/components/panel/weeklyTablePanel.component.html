@@ -1,0 +1,42 @@
+<body class="body">
+  <div class="panels-container">
+    <div class="panel">
+      <div>
+        <div class="panel-title">אירועים מיוחדים</div>
+        <div class="panel-count">{{specialEvents.length}}</div>
+        <div class="panel-badges">
+          <div *ngFor="let event of specialEvents" class="special-event icon-green badge">
+            <div class="event-count">{{event.count}}</div>
+            <span class="badge-title">{{event.name}}</span>
+          </div>
+        </div>
+      </div>
+      <img class="icon-svg icon icon-green" src="../../../assets/icons/calendar.svg" />
+    </div>
+
+    <div class="panel">
+      <div>
+        <div class="panel-title">תקנים חסרים</div>
+        <div class="panel-count">{{missingPositionsSum}}</div>
+        <div class="panel-badges">
+          <div *ngFor="let position of missingPositions" class="icon-red badge">{{position.count}} :{{position.day}}</div>
+          <span class="badge-title">:חסרים</span>
+        </div>
+      </div>
+      <img class="icon-svg icon-red icon" src="../../../assets/icons/triangle-alert-fill.svg"/>
+    </div>
+
+    <div class="panel">
+      <div>
+        <div class="panel-title">סה"כ צוות נדרש</div>
+        <div class="panel-count">{{requiredTeam.sum}}</div>
+        <div class="panel-badges">
+          <div class="badge badge-pink">{{requiredTeam.regularsCount}} :סדיר</div>
+          <div class="badge badge-purple">{{requiredTeam.reservistCount}} :מילואים</div>
+          <span>:מתוכם</span>
+        </div>
+      </div>
+      <img class="icon-svg icon-blue icon" src="../../../assets/icons/people-community-16-filled.svg"/>
+    </div>
+  </div>
+</body>
