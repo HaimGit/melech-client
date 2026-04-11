@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
-import { JusticeTableComponent } from './justice-table/justice-table.component';
+import { JusticeTableComponent } from './main-page/weekly-display/justice-board/justice-table/justice-table.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTableModule } from '@angular/material/table';
 import { MatIconModule } from '@angular/material/icon';
@@ -26,7 +26,7 @@ import { WeeklyTablePanelsComponent } from './main-page/weekly-display/weekly-or
     BrowserModule,
     BrowserAnimationsModule,
     MatTableModule,
-    MatIconModule
+    MatIconModule,
     AppRoutingModule
   ],
   providers: [],

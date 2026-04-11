@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { COLOR_RANGES } from '../count-to-color.pipe';
+import { COLOR_RANGES } from '../../../../count-to-color.pipe';
 
 export interface crewmanDetails {
   name: string;
