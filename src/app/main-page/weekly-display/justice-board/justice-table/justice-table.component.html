@@ -1,0 +1,64 @@
+<div class="colors-guide">
+  <div *ngFor="let item of colorGuide; trackBy: trackByColor" class="color">
+    <div
+      class="color-circle"
+      [ngClass]="item.color"
+    ></div>
+    <div class="range">{{item.range}}</div>
+  </div>
+</div>
+<table
+  mat-table
+  [dataSource]="dataSource"
+  class="mat-elevation-z7 justice-table"
+>
+  <ng-container matColumnDef="details">
+    <th mat-header-cell class="justice-table-header" *matHeaderCellDef>
+      פרטים
+    </th>
+    <td mat-cell class="justice-table-details-cell" *matCellDef="let element">
+      <div class="details-cell-content">
+        <img class="unit-icon" src="assets/IAF_Air_Control_Command_517.png" />
+        <div class="details">
+          <div class="detials-header">
+            <div class="details-name">{{ element.details.name }}</div>
+            <div class="deatils-role">({{ element.details.role }})</div>
+          </div>
+          <div class="details-status">{{ element.details.status }}</div>
+          <div class="details-course">קורס: {{ element.details.course }}</div>
+        </div>
+      </div>
+    </td>
+  </ng-container>
+
+  <ng-container *ngFor="let col of dataColumns; trackBy: trackByCol" [matColumnDef]="col.key">
+    <th mat-header-cell class="justice-table-header" *matHeaderCellDef>
+      {{ col.label }}
+    </th>
+    <td
+      mat-cell
+      [ngClass]="col.hasRequiredAmount ? (element[col.key] | countToColor) : ''"
+      class="justice-table-cell"
+      *matCellDef="let element"
+    >
+      {{ element[col.key] }}
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="groupHeader">
+    <td mat-cell *matCellDef="let row" [attr.colspan]="displayedColumns.length">
+      <strong>{{ row.label }}</strong>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr
+    mat-row
+    *matRowDef="let row; columns: ['groupHeader']; when: isGroup"
+  ></tr>
+  <tr
+    mat-row
+    class="justice-table-row"
+    *matRowDef="let row; columns: displayedColumns"
+  ></tr>
+</table>
