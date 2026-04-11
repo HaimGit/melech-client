@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { WeeklyTablePanelsComponent } from './weeklyTablePanel.component';
+import { WeeklyTablePanelsComponent } from './weekly-table-panel.component';
 
 describe('PanelComponent', () => {
   let component: WeeklyTablePanelsComponent;
