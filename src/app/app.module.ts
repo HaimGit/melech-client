@@ -6,12 +6,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTableModule } from '@angular/material/table';
 import { MatIconModule } from '@angular/material/icon';
 import { CountToColorPipe } from './count-to-color.pipe';
+import { WeeklyTablePanelsComponent } from './components/panel/weeklyTablePanel.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     JusticeTableComponent,
-    CountToColorPipe
+    CountToColorPipe,
+    WeeklyTablePanelsComponent
   ],
   imports: [
     BrowserModule,
