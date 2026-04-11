@@ -1,0 +1,96 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .pannels-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 2%;
+        padding: 0.8%;
+        width: 96%;
+        border: solid 2px #d3d3d385;
+        border-bottom: solid 4px #d3d3d385;
+        border-radius: 3px;
+        background-color: white;
+
+        .upper-container-headers {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+
+            .upper-container-title {
+                display: flex;
+                flex-direction: column;
+                align-items: end;
+            }
+
+            .upper-container-buttons {
+                display: flex;
+
+                .pannel-button {
+                    border: 1px solid #d3d3d385;
+                    border-radius: 3px;
+                    width: fit-content;
+                    margin-right: 6%;
+                    padding: 4%;
+                    cursor: pointer;
+                    border-radius: 3px;
+                }
+            }
+        }
+
+        .pannels {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: 100%;
+            margin-top: 1.5%;
+            gap: 1%;
+
+            .pannel {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                color: white;
+                padding: 1.5% 0 1.5% 0;
+                border-radius: 4px;
+            }
+
+            .night-shift {
+                background-color: #4facf5db;
+            }
+
+            .day-shift {
+                background-color: #ffca2c;
+            }
+
+            .missing-crew-members {
+                background-color: #f76262;
+            }
+
+            .total-crew-members {
+                background-color: #019943b3;
+            }
+        }
+
+        .pannels > * {
+            flex: 1;
+        }
+
+        .colors {
+            display: flex;
+            flex-direction: row-reverse;
+            align-items: center;
+            width: 100%;
+            border-bottom: 2px solid #d3d3d385;
+            padding-bottom: 0.6%;;
+            padding-top: 0.6%;
+        }
+    }
+}

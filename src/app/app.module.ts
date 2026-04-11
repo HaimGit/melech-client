@@ -6,13 +6,20 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTableModule } from '@angular/material/table';
 import { MatIconModule } from '@angular/material/icon';
 import { CountToColorPipe } from './count-to-color.pipe';
-import { WeeklyTablePanelsComponent } from './components/panel/weeklyTablePanel.component';
+import { AppRoutingModule } from './app.routing.module';
+import { MainComponent } from './main-page/main.component';
+import { WeeklyScheduleComponent } from './main-page/weekly-display/weekly-schedule/weekly-schedule.component';
+import { TableFilteringComponent } from './main-page/weekly-display/weekly-schedule/table-filtering/table-filtering.component';
+import { WeeklyTablePanelsComponent } from './main-page/weekly-display/weekly-order/panel/weekly-table-panel.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     JusticeTableComponent,
     CountToColorPipe,
+    MainComponent,
+    WeeklyScheduleComponent,
+    TableFilteringComponent,
     WeeklyTablePanelsComponent
   ],
   imports: [
@@ -20,6 +27,7 @@ import { WeeklyTablePanelsComponent } from './components/panel/weeklyTablePanel.
     BrowserAnimationsModule,
     MatTableModule,
     MatIconModule
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

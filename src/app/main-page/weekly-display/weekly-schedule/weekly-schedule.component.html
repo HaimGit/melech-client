@@ -1,0 +1,43 @@
+<button routerLink="">מסך הבית</button>
+
+<div class="pannels-container">
+    <div class="upper-container-headers">
+        <div class="upper-container-buttons">
+            <div class="pannel-button">רענון</div>
+            <div class="pannel-button">הדפסה</div>
+            <div class="pannel-button">ייצוא</div>
+        </div>
+        <div class="upper-container-title">
+           <b>לו"ז שבועי</b>
+           <br />
+           צפייה ותכנון המשמרת השבועית לפי צוותים ואנשי צוות
+        </div>
+    </div>
+    <div class="pannels">
+        <div class="pannel night-shift">
+            משמרת לילה
+            <br /><br />
+            <div>{{nightShiftCrewMembersCount}}</div>
+        </div>
+        <div class="pannel day-shift">
+            משמרת יום
+            <br /><br />
+            <div>{{dayShiftCrewMembersCount}}</div>
+        </div>
+        <div class="pannel missing-crew-members">
+            פערי תקן
+            <br /><br />
+            <div>{{totalWeeklyMissingCrewMembers}}</div>
+        </div>
+        <div class="pannel total-crew-members">
+            סך כל אנשי הצוות
+            <br /><br />
+            <div>{{totalWeeklyCrewMembersCount}}</div>
+        </div>
+    </div>
+</div>
+
+<div class="pannels-container">
+    <table-filtering title="לוח זמנים שבועי"></table-filtering>
+    <div class="colors">צבעים לפי לוגיקה</div>
+</div>

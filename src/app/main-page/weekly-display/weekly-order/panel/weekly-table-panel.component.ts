@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'weekly-table-panel',
-  templateUrl: './weeklyTablePanel.component.html',
-  styleUrls: ['./weeklyTablePanel.component.less'],
+  templateUrl: './weekly-table-panel.component.html',
+  styleUrls: ['./weekly-table-panel.component.less'],
 })
 export class WeeklyTablePanelsComponent {
   specialEvents = [
