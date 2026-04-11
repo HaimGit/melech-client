@@ -6,10 +6,20 @@ import { AppRoutingModule } from './app.routing.module';
 import { MainComponent } from './main-page/main.component';
 import { WeeklyScheduleComponent } from './main-page/weekly-display/weekly-schedule/weekly-schedule.component';
 import { TableFilteringComponent } from './main-page/weekly-display/weekly-schedule/table-filtering/table-filtering.component';
+import { WeeklyTablePanelsComponent } from './components/panel/weeklyTablePanel.component';
 
 @NgModule({
-  declarations: [AppComponent, MainComponent, WeeklyScheduleComponent, TableFilteringComponent],
-  imports: [BrowserModule, AppRoutingModule],
+  declarations: [
+    AppComponent,
+    MainComponent,
+    WeeklyScheduleComponent,
+    TableFilteringComponent,
+    WeeklyTablePanelsComponent
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
